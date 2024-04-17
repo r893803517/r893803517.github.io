@@ -19,7 +19,7 @@ ES6提供的一种异步编程解决方案
 
 >遍历器的next方法返回一个对象，包含value和done属性，如：
 >
->{ value: 'hello', done: false }
+>``` { value: 'hello', done: false } ```
 >
 >value为yield后接的表达式的值，类型为any
 >

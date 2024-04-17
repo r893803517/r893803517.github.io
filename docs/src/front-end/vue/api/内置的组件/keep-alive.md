@@ -10,9 +10,9 @@
 
 主要用于保留组件状态或避免重新渲染
 
-<keep-alive> 包裹动态组件时，会缓存不活动的组件实例，而不是销毁它们。
+\<keep-alive> 包裹动态组件时，会缓存不活动的组件实例，而不是销毁它们。
 
-和<transition>相似，keep-alive是一个抽象组件：自身不会渲染一个DOM元素，也不会出现在组件的父组件链中
+和\<transition>相似，keep-alive是一个抽象组件：自身不会渲染一个DOM元素，也不会出现在组件的父组件链中
 
 在vue2.2.0及以上版本中，activated和deactivated将会在keep-alive树内的所有嵌套组件中触发
 
