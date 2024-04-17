@@ -1,0 +1,3 @@
+[submodule "docs/packages"]
+	path = docs/packages
+	url = https://gitee.com/roooobin/front-end-knowledge-tree.git
