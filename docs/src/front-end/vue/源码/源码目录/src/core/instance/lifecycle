@@ -1,0 +1,20 @@
+#### 导出：initLifecycle函数
+
+##### 作用：
+
+- vue.prototype._init方法中被调用主要是给vue实例添加一些属性
+
+  
+
+| 名称                                                      | 说明                                                         |
+| --------------------------------------------------------- | ------------------------------------------------------------ |
+| [$parent](https://cn.vuejs.org/v2/api/#parent)            | 指定已创建的实例之父实例，在两者之间建立父子关系。子实例可以用 this.parent访问父实例，子实例被推入父实例的children 数组中。 |
+| [$root](https://cn.vuejs.org/v2/api/#vm-root)             | 当前组件树的根 Vue 实例。如果当前实例没有父实例，此实例将会是其自己。 |
+| [$children](https://cn.vuejs.org/v2/api/#vm-children)     | 当前实例的直接子组件。需要注意 $children 并不保证顺序，也不是响应式的。 |
+| [$refs](https://cn.vuejs.org/v2/api/#vm-refs)             | 一个对象，持有已注册过 ref 的所有子组件。                    |
+| [_watcher](https://cn.vuejs.org/v2/guide/reactivity.html) | 组件实例相应的 watcher 实例对象。                            |
+| _inactive                                                 | 表示keep-alive中组件状态，如被激活，该值为false,反之为true。 |
+| _directInactive                                           | 也是表示keep-alive中组件状态的属性。                         |
+| _isMounted                                                | 当前实例是否完成挂载(对应[生命周期图示](https://cn.vuejs.org/v2/guide/instance.html)中的mounted)。 |
+| _isDestroyed                                              | 当前实例是否已经被销毁(对应[生命周期图示](https://cn.vuejs.org/v2/guide/instance.html)中的destroyed)。 |
+| _isBeingDestroyed                                         | 当前实例是否正在被销毁,还没有销毁完成(介于[生命周期图示](https://cn.vuejs.org/v2/guide/instance.html)中deforeDestroy和destroyed之间)。 |

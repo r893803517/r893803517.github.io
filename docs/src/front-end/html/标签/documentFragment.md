@@ -1,0 +1,14 @@
+Html文档碎片--Document​Fragment
+直译过来就是文档碎片，表示一个没有父级文件的最小文档对象。它被作为一个轻量版的 Document。最大的区别是因为 DocumentFragment 不是真实DOM树的一部分，它的变化不会触发 DOM 树的（重绘) ，且不会导致性能等问题。
+
+它主要用来解决dom元素的插入问题，比如需要插入多个dom节点时，可以创建一个Document​Fragment，把节点依次添加到Document​Fragment上，添加完毕后再把Document​Fragment添加到页面document上，这样只会产生一次重绘。而如果直接把dom节点依次添加到页面document上就会引发多次重绘
+
+实际上现代浏览器对js引发重绘的操作也会进行节流控制的，比如短时间内触发了多次repaint的话，浏览器会将他们合并成一次repaint来处理，不过保险起见直接使用Document​Fragment即可。
+
+可以通过document.createDocumentFragment创建一个文档碎片。
+
+html原生的\<template>标签其实就是一个documentfragment，使用template标签时，实际插入到document上面的是，template的子节点，它本身不会被添加到dom上面。
+
+react框架也有类似template的文档碎片概念：fragments，从而可以一个组件返回多个元素。
+
+vue也使用了template标签，不过他不允许一个组件模板上有多个父元素节点(必须有一个唯一父节点)。

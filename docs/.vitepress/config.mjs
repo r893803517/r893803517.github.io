@@ -8,7 +8,7 @@ export default defineConfig({
 
   head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
   
-  srcDir: './packages',
+  srcDir: './src',
 
   themeConfig: {
     logo: './logo.png',
@@ -48,15 +48,15 @@ export default defineConfig({
       '/front-end/': {
         text: 'front-end',
         activeMatch: '/front-end',
-        items: set_sidebar('/packages/front-end', '/front-end')
+        items: set_sidebar('/src/front-end', '/front-end')
       },
       '/back-end/': {
         text: 'back-end',
-        items: set_sidebar('/packages/back-end', '/back-end')
+        items: set_sidebar('/src/back-end', '/back-end')
       },
       '/common/': {
         text: 'common',
-        items: set_sidebar('/packages/common', '/common')
+        items: set_sidebar('/src/common', '/common')
       }
     },
 
