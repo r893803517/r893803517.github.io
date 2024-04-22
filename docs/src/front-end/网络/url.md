@@ -1,3 +1,12 @@
+## 组成
+
+1. 协议protocol，常用的http、ftp、smtp、HTTPS、DNS、DHCP
+2. 主机名host
+3. 端口port
+4. 路径path
+5. 锚点 #后接的内容
+6. 参数query ?后接的内容，以键值对存在，通过&分割
+
 1 区别
 1.1 encodeURI()
 encodeURI()通常用于转码整个 URL，不会对URL 元字符以及语义字符进行转码，URL元字符：

@@ -1,12 +1,21 @@
-#### 评价
+# Web Components
+
+Web Components 是一组 web 平台的技术API ，允许您创建可重用的定制元素（它们的功能封装在您的代码之外）并且在您的web 应用中使用它们。
+
+技术 API，可重用、定制。
+
+## 组成
+
+Web Components不是单一的规范，而是一系列的技术组成，包括Custom Element、Shadow DOM、HTML templates 三种技术规范。
+
+## 评价
 
 状态没有跟视图分离，直接操作dom很麻烦，vue、react这样的mv框架还是少不了。
 样式安全封装在组件内部，不暴露任何class，有一些特殊情况下，需要修改样式，就不方便了。
 感觉只是提供了基础的API，很多问题还是需要框架解决！除了上面两点，还要状态管理问题。
 
 
-
-#### 使用
+## 使用
 
 先定义一个继承 HTMLElement的类
 
@@ -24,7 +33,7 @@ class UserCard extends HTMLElement {
 window.customElements.define('user-card', UserCard);
 ```
 
-##### 添加内容
+### 添加内容
 
 ```javascript
 class UserCard extends HTMLElement {
@@ -56,7 +65,7 @@ class UserCard extends HTMLElement {
 }
 ```
 
-##### template标签
+### template标签
 
 使用 JavaScript 写上一节的 DOM 结构很麻烦，Web Components API 提供了`<template>`标签，可以在它里面使用 HTML 定义 DOM。
 
@@ -88,7 +97,7 @@ class UserCard extends HTMLElement {
 
 上面代码中，获取`<template>`节点以后，克隆了它的所有子元素，这是因为可能有多个自定义元素的实例，这个模板还要留给其他实例使用，所以不能直接移动它的子元素。
 
-##### 添加样式
+### 添加样式
 
 组件的样式应该与代码封装在一起，只对自定义元素生效，不影响外部的全局样式。所以，可以把样式写在`<template>`里面。
 
@@ -110,7 +119,7 @@ class UserCard extends HTMLElement {
 
 
 
-##### 参数
+### 参数
 
 ```js
 class UserCard extends HTMLElement {
@@ -130,7 +139,7 @@ window.customElements.define('user-card', UserCard);
 
 
 
-##### shadow dom
+## shadow dom
 
 Web Component 允许内部代码隐藏起来，这叫做 Shadow DOM，即这部分 DOM 默认与外部 DOM 隔离，内部任何代码都无法影响外部。
 

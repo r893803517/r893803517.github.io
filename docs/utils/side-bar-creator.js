@@ -13,6 +13,31 @@ const isDirectory = (path) => fs.lstatSync(path).isDirectory()
 // 取差值
 const intersections = (arr1, arr2) => Array.from(new Set(arr1.filter((item) => !new Set(arr2).has(item))))
 
+// 文件排序优先级
+const priorityList = [
+    { index: 2, keyWord: '介绍' },
+    { index: 1, keyWord: '基础' },
+    { index: -1, keyWord: '进阶' }
+]
+
+const getPriority = function(file) {
+    let priority = 0 // 默认优先级为0
+    const fileName = path.basename(file)
+
+    priorityList.some(item => {
+        if (fileName.includes(item.keyWord)) {
+            priority = item.index
+            return true
+        }
+        return false
+    })
+
+    return priority
+}
+
+// 排序
+const fileSort = (a, b) => getPriority(b) - getPriority(a)
+
 // 把方法导出直接使用
 function getList({ params, path1, pathname = '' }) {
     // 存放结果
@@ -30,6 +55,8 @@ function getList({ params, path1, pathname = '' }) {
             const files = fs.readdirSync(dir)
              // 过滤掉
             const items = intersections(files, WHITE_LIST)
+            // 文件排序
+            items.sort(fileSort)
             res.push({
                 text: params[file],
                 collapsed: true,
