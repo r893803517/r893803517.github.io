@@ -1,3 +1,5 @@
+# History
+
 ## History 对象属性
 
 length 返回浏览器历史列表中的URL数量

@@ -1,3 +1,5 @@
+# Location
+
 ## Location对象的属性
 
 1. location.href获取或者设置整个URL

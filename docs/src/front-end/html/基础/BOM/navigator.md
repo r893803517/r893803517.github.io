@@ -1,3 +1,5 @@
+# Navigator
+
 ## Navigator对象属性
 
 appCodeName 属性是一个只读字符串，声明了浏览器的代码名。

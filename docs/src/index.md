@@ -34,3 +34,5 @@ features:
 
 不定时更新整理哦 :stuck_out_tongue_winking_eye:
 
+[关于](/about)
+
