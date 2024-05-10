@@ -29,7 +29,7 @@ export default defineConfig({
           { text: '通用', link: '/common/docker/基本概念' }
         ]
       },
-      { text: '面试整理', link: '/markdown-examples' }
+      { text: '面试整理', link: '/interview/前端/vue2/源码' }
     ],
 
     // sidebar: [
@@ -57,6 +57,10 @@ export default defineConfig({
       '/common/': {
         text: 'common',
         items: set_sidebar('/src/common', '/common')
+      },
+      '/interview/': {
+        text: 'interview',
+        items: set_sidebar('/src/interview', '/interview')
       }
     },
 

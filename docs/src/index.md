@@ -14,15 +14,15 @@ hero:
       text: 去学知识
       link: front-end/css/函数
     - theme: alt
-      text: 去面试
-      link: /api-examples
+      text: 面试整理
+      link: interview/前端/vue2/源码
 
 features:
   - icon: 🛠️
     title: 编程知识
     details: 包含前端、后端和操作系统相关的知识整理
   - icon: 💬
-    title: 面试经验
+    title: 面试整理
     details: 收集&整理了自己和身边人的面试经验
   - icon: 🗺️
     title: 生活点滴（TODO）
