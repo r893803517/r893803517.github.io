@@ -16,10 +16,6 @@ function myNew(Fn, ...args) {
 }
 ```
 
-
-
-
-
 ## 介绍
 
 引用MDN的官方介绍，是这样定义 `new` 的：
@@ -39,8 +35,6 @@ new constructor(arg1)
 new constructor(arg1, arg2)
 new constructor(arg1, arg2, /* …, */ argN)`
 ```
-
-
 
 - `constructor`：一个指定对象实例的类型的类或函数。
 - `arg`：一个用于被 constructor 调用的值列表。`new Foo` 与 `new Foo()` 等价，换句话说：如果没有指定参数列表，则在不带参数的情况下调用 Foo。
@@ -63,8 +57,6 @@ console.log(son.name); // 访问构造函数里的属性
 console.log(son.sayName()); // 访问原型里的属性
 // 我的名字是：小帅
 ```
-
-
 
 1. 可以访问构造函数里的属性
 2. 可以访问原型上的属性
@@ -93,8 +85,6 @@ function myNew() {
  return isResult ? result : obj
 }
 ```
-
-
 
 或者你也可以这样写：
 
@@ -139,5 +129,3 @@ Object.setPrototypeOf(obj, propto)
 其实，通过手写 `new` 的实现，你应该可以发现，针对本文 `new` 的创建过程这个问题，仔细思考下...
 
 我们完全可以把他看做是对原型链的一种考察，其中涉及的`构造函数`、`prototype`、`__proto__`、`Object.create`、`Object.setPrototypeOf` 等概念与方法，是不是又特别的熟悉呢？
-
-

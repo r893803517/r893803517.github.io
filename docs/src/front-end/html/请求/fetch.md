@@ -63,37 +63,43 @@ fetch的不足
 - 默认不会发送cookies，需要设置init参数 credentials: 'same-origin'
 
 - 请求错误不会reject，http请求错误时，fetch返回的Promise不会被标记为reject，也不会执行catch，需要在resolve函数中判断response.ok是否为true
-
-    ```
-    fetch(url)
-    .then( response => {
-        if (response.ok) return response.json();
-        throw new Error('Network error')
-    })
-    .then( json => console.log(json))
-    .catch(error => console.error('error', error))
+  
+  ```
+  fetch(url)
+  .then( response => {
+      if (response.ok) return response.json();
+      throw new Error('Network error')
+  })
+  .then( json => console.log(json))
+  .catch(error => console.error('error', error))
+  ```
 
 - 原生fetch API没有提供超时timeout设置，可以使用promise.race来实现，或者通过signal参数（配合AbortController对象使用）
-
+  
     Promise.race([
+  
         fecth(url),
         new Promise(resolve => setTimeout(() => resolve('timeout'), 3000))
+  
     ]).then( response => {
+  
         console.log(response)
+  
     })
 
 - 没有abort，旧版fetch一旦发起请求无法中止，现在支持AbortController API的浏览器可以通过调用abortController.abort()中止，通过修改init参数中的signal属性，Promise会被标记为reject状态，同样可以实现timeout效果
-
-    ```
-    const controller = new AbortController()
-
-    fetch(url, { signal: controller.signal }).then( response => {
-        if (response.ok) return response.json()
-        throw new Error('Network error');
-    })
-    .then( json => console.log(json))
-    .catch( error => console.error('error': error))
-
-    setTimeout(() => controller.abort(), 3000)
+  
+  ```
+  const controller = new AbortController()
+  
+  fetch(url, { signal: controller.signal }).then( response => {
+      if (response.ok) return response.json()
+      throw new Error('Network error');
+  })
+  .then( json => console.log(json))
+  .catch( error => console.error('error': error))
+  
+  setTimeout(() => controller.abort(), 3000)
+  ```
 
 - 没有progress，不能显示文件上传和大型表单提交的进度

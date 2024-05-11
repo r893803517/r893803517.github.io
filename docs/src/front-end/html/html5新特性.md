@@ -42,27 +42,27 @@ details 定义文档细节
 
 summary 标签包含detials元素的标题
 
-##  增强型表单
+## 增强型表单
 
 HTML5拥有多个新的表单input类型  新增表单属性
 
-##  音频和视频
+## 音频和视频
 
 vedio和audio标签
 
-##  canvas 绘图
+## canvas 绘图
 
-##  SVG绘图
+## SVG绘图
 
-##  地理定位
+## 地理定位
 
-##  拖放API
+## 拖放API
 
-##  web worker
+## web worker
 
-##  web storage  localstorage  和 session storage
+## web storage  localstorage  和 session storage
 
-##  websocket
+## websocket
 
 ## 新标签
 

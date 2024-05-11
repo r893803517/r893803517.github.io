@@ -106,5 +106,3 @@ promise解决程序是一个抽象操作，它以一个promise和一个值作为
         }
     }
     obj.then.then = obj.then
-
-

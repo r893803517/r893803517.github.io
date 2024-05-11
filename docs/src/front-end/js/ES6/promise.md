@@ -4,15 +4,11 @@
 - fulfilled
 - rejected
 
-
-
 promise状态不受外界影响
 
 promise一旦改变状态就不会再变
 
 状态的改变只能是pending -> fulfilled 或者 pending -> rejected
-
-
 
 #### 基本用法
 
@@ -28,13 +24,9 @@ const promise = new Promise(function(resolve, reject) {
 });
 ```
 
-
-
 #### then方法
 
 返回一个新的promise实例
-
-
 
 #### catch方法
 
@@ -46,15 +38,11 @@ Promise 对象的错误具有“冒泡”性质，会一直向后传递，直到
 
 如果没有使用`catch()`方法指定错误处理的回调函数，Promise 对象抛出的错误不会传递到外层代码，即不会有任何反应
 
-
-
 #### finally方法
 
 `finally()`方法用于指定不管 Promise 对象最后状态如何，都会执行的操作。该方法是 ES2018 引入标准的。
 
 方法的回调函数不接受任何参数，这意味着没有办法知道，前面的 Promise 状态到底是`fulfilled`还是`rejected`。这表明，`finally`方法里面的操作，应该是与状态无关的，不依赖于 Promise 的执行结果。
-
-
 
 #### Promise.all
 
@@ -66,19 +54,13 @@ const p = Promise.all([p1, p2, p3]);
 
 `Promise.all()`方法的参数可以不是数组，但必须具有 Iterator 接口，且返回的每个成员都是 Promise 实例。
 
-
-
 `p`的状态由`p1`、`p2`、`p3`决定，分成两种情况。
 
 （1）只有`p1`、`p2`、`p3`的状态都变成`fulfilled`，`p`的状态才会变成`fulfilled`，此时`p1`、`p2`、`p3`的返回值组成一个数组，传递给`p`的回调函数。
 
 （2）只要`p1`、`p2`、`p3`之中有一个被`rejected`，`p`的状态就变成`rejected`，此时第一个被`reject`的实例的返回值，会传递给`p`的回调函数。
 
-
-
 如果作为参数的 Promise 实例，自己定义了`catch`方法，那么它一旦被`rejected`，并不会触发`Promise.all()`的`catch`方法。
-
-
 
 #### Promise.race
 
@@ -90,8 +72,6 @@ const p = Promise.race([p1, p2, p3]);
 
 只要`p1`、`p2`、`p3`之中有一个实例率先改变状态，`p`的状态就跟着改变。那个率先改变的 Promise 实例的返回值，就传递给`p`的回调函数。
 
-
-
 #### Promise.allSettled
 
 ```javascript
@@ -101,8 +81,6 @@ allSettledPromise.then(function (results) {
 ```
 
 每个results对象都有`status`属性，该属性的值只可能是字符串`fulfilled`或字符串`rejected`。`fulfilled`时，对象有`value`属性，`rejected`时有`reason`属性，对应两种状态的返回值。
-
-
 
 #### Promise.any
 

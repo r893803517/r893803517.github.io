@@ -17,15 +17,13 @@ ES6提供的一种异步编程解决方案
 
 拿到generator函数运行后返回的遍历器对象后，需要调用对象的next方法，使得指针移向下一个状态（yield表达式或者return语句），yield表达式是暂停执行的标记，而next方法可以恢复执行
 
->遍历器的next方法返回一个对象，包含value和done属性，如：
->
->``` { value: 'hello', done: false } ```
->
->value为yield后接的表达式的值，类型为any
->
->done表示运行是否结束，boolean类型
-
-
+> 遍历器的next方法返回一个对象，包含value和done属性，如：
+> 
+> ``` { value: 'hello', done: false } ```
+> 
+> value为yield后接的表达式的值，类型为any
+> 
+> done表示运行是否结束，boolean类型
 
 ##### yield表达式运行逻辑
 
@@ -38,7 +36,7 @@ ES6提供的一种异步编程解决方案
 1. yield表达式只能用在generator函数里面，用在其他地方会报错
 
 2. yield表达式如果用在另一个表达式之中，必须放在圆括号里面。
-
+   
    ```js
    console.log('Hello' + yield 123); // SyntaxError
    console.log('Hello' + (yield 123)); // OK
@@ -49,8 +47,6 @@ ES6提供的一种异步编程解决方案
      let input = yield; // OK
    }
    ```
-
-   
 
 #### 与Iterator接口的关系
 
@@ -71,13 +67,8 @@ myIterable[Symbol.iterator] = function* () {
 
 > 遍历器对象也有Symbol.iterator属性，也是一个遍历器对象生产函数，执行后返回它自己
 
-
-
-
-
 #### next方法的参数
 
 yield表达式本身没有返回值，或者说总是返回undefined。next方法可以带一个参数，该参数会被当做上一个yield表达式的返回值。
 
 通过这个传参，generator函数获得了运行时获取外部参数的能力，并根据参数值动态调整函数行为。
-

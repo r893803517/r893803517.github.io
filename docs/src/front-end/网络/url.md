@@ -27,5 +27,3 @@ https://www.baidu.com/s?returnURL=HTTP://WWW.TEST.COM/
 ```
 
 链接内包含一个回调地址，回调地址是另外一个URL，此时我们就需要使用encodeURIComponent()对回调地址进行转码，这样一来，URL中就不会出现多个http://，多个&这样的特殊字符；方便对回调地址进行处理；以上链接处理如下：
-
-
